@@ -1,4 +1,14 @@
+using ApiV1.Business.Clases;
+using ApiV1.Business.Contracts;
+using ApiV1.Services.Clases;
+using ApiV1.Services.Contracts;
+
 var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
+builder.Services.AddControllers();
+
+builder.Services.AddTransient<IRolRepository, RolRepository>(); // Registro de la dependencia
+builder.Services.AddTransient<IRolService, RolService>(); // Registro de la dependencia
 
 // Add services to the container.
 
